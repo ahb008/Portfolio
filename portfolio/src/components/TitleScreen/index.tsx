@@ -1,43 +1,33 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from "gsap";
 import './titleScreen.scss';
 
 export const TitleScreen: React.FC = () => {
 
-  const [reversed, setReversed] = useState(false);
+  const [runDot, setRunDot] = useState(false);
   const tl = useRef();
 
-  const clickFunction = () => {
-    console.log("yo");
-    // clickAnimation();
-  }
-
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      // @ts-ignore
-      tl.current = gsap
-        .timeline({repeat: -1, yoyo: true})
-        .to(".title-text", {
-            scale: 1.25,
-            ease: "sine.out",
-            duration: 1.6,
-          });
-      });
-
-      // Animation cleanup function
-      return () => ctx.revert();
-    }, []);
-
     useEffect(() => {
-      console.log("toggling reverse to", reversed);
-      // @ts-ignore
-      tl.current?.reversed(reversed);    
-    }, [reversed]);
+      let ctx;
+      if (runDot) {
+        ctx = gsap.context(() => {
+          // @ts-ignore
+          tl.current = gsap
+            .timeline()
+            .to(".circle", {
+                scale: 450,
+                ease: "expoScale(1,7,none)",
+                duration: 1.75,
+              });
+          });
+      }
+    }, [runDot]);
 
     return (
       <div className='title-screen-wrapper'>
-        <p className="title-text" onClick={() => setReversed(!reversed)}>
-          click to enter
+        <p onClick={() => setRunDot(true)}>
+          {/* hi, my name's Andrew Bass &#128032; I am a website developer and designer currently working at Nike &#127939; Previously, I worked for the Airforce detecting rocket launches &#128640; and conducted medical research &#128300; in my undergrad &#x1f393; I enjoy making making art &#127912; and pretty much everything outdoors &#128507; */}
+          hi, click me 
         </p>
       </div>
     );

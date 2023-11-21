@@ -5,9 +5,11 @@
   height: 100vh;
   width: 100vw;
   font-size: 32px;
-  .title-text {
-    &:hover {
-      cursor: pointer;
-    }
+  .circle {
+    height: 4px;
+    width: 4px;
+    background-color: black;
+    border-radius: 50%;
+    margin-top: 20px;
   }
 }
