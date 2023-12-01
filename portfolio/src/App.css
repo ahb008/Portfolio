@@ -1,12 +1,5 @@
 .App {
   cursor: none;
-}
-
-.cursor {
-  height: 32px;
-  width: 32px;
-  background-color: black;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
+  background-color: #20637E;
+  user-select: none;
 }
