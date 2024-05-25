@@ -1,15 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './subpage.scss';
 import { XCursor } from '../../components/Cursors/XCursor';
+import { Loader } from '../../components/Cursors/Loader';
 
 interface SubpageProps {
   setPage: (page: string) => void;
 }
 
 export const Subpage: React.FC<SubpageProps> = ({setPage}) => {
+  const [showLoader, setShowLoader] = useState(false);
+
+  useEffect(() => {
+    const handleMouseDown = () => {
+        setShowLoader(true);
+    };
+
+    const handleMouseUp = () => {
+      setShowLoader(false);
+    };
+
+    // Attaching the event listeners to the window object
+    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mouseup', handleMouseUp);
+
+    // Cleanup function to remove the event listeners
+    return () => {
+      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, []);
+
   return (
     <>
       <XCursor setPage={setPage}/>
+      {showLoader && <Loader show={showLoader}/>}
       <div className="subpage-wrapper">
         <div className="left-column">
           <div className="title-wrapper">
