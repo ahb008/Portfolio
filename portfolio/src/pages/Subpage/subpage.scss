@@ -1,27 +1,53 @@
 @import "../../styles/colors.scss";
 .subpage-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  gap: 160px;
+  width: calc(100% - 160px);
+  height: calc(100% - 160px);
   padding: 80px;
-  gap: 80px;
   .left-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+    gap: 32px;
     .title-wrapper {
       background-color: $subpageBackground;
       border-radius: 30px;
-      height: 200px;
-      width: 200px;
+      min-width: 304px;
+      padding: 34px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .title {
+        margin: 0;
+        font-size: 36px;
+        font-style: italic;
+        letter-spacing: -2px;
+        font-weight: 800;
+      }
+      .subtitle {
+        margin: 0;
+        font-size: 24px;
+        color: $subpageSubtitle;
+        font-style: italic;
+        font-weight: 500;
+        letter-spacing: -2px;
+      }
     }
     .description-wrapper {
       background-color: $subpageBackground;
       border-radius: 30px;
-      height: 200px;
-      width: 200px;
+      height: 100%;
+      width: 304px;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .description {
+        margin: 0;
+      }
     }
   }
   .right-column {
@@ -29,6 +55,8 @@
     border-radius: 30px;
     height: 200px;
     width: 200px;
+    .image-wrapper {
       
+    }
   }
 }
