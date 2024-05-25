@@ -1,22 +1,26 @@
-'use client'; 
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import mousePos from '../../utils/useMousePos';
-import './cursor.scss';
-import SiteContext from '../Context/Context';
+import mousePos from '../../../utils/useMousePos';
+import {ReactComponent as Arrow} from '../../../svg/Arrow.svg';
+import './arrowCursor.scss';
 
 
-export const Cursor: React.FC = () => {
-    const context = useContext(SiteContext);
+export const ArrowCursor: React.FC = () => {
     const [whichVariant, setWhichVariant] = useState("notPressed");
 
     const {x, y} = mousePos();
 
-    const variants = {
-        pressed: { scale: 0.5, backgroundColor: "#80FF00", x: x-16, y: y-16},
-        notPressed: { scale: 1, x: x-16, y: y-16 },
-        specialText: { scale: 5, x: x-16, y: y-16, backgroundColor: "blue", zIndex: 1 }
+    const cursorVariants = {
+        pressed: { scale: 5, x: x-12, y: y-12, backgroundColor: "#BABABA80" },
+        notPressed: { scale: 1, x: x-12, y: y-12 },
+        specialText: { scale: 5, x: x-12, y: y-12, backgroundColor: "#BABABA80" }
     };
+
+    const arrowVariants = {
+      pressed: { scale: 1, x: -5, y: 5},
+      notPressed: { scale: 0 },
+      specialText: { scale: 1, zIndex: 1 }
+  };
 
     useEffect(() => {
         const handleMouseDown = () => {
@@ -36,13 +40,11 @@ export const Cursor: React.FC = () => {
         specialTextElements.forEach(element => {
           element.addEventListener('mouseenter', () => {
               setWhichVariant("specialText");
-              context?.setHovering(true);
           });
       
           element.addEventListener('mouseleave', () => {
               setWhichVariant("notPressed");
               element.classList.remove("hovering");
-              context?.setHovering(false);
           });
         });
 
@@ -54,11 +56,22 @@ export const Cursor: React.FC = () => {
     }, []);
     
     return (
+        <>
         <motion.div
           id="cursor"
           className="cursor pointer-off"
           animate={whichVariant}
-          variants={variants}
-        />
+          variants={cursorVariants}
+        >
+          <motion.div
+            id="arrow"
+            className="arrow-motion-wrapper"
+            animate={whichVariant}
+            variants={arrowVariants}
+          >
+            <Arrow className='arrow'/>
+          </motion.div>
+        </motion.div>
+        </>
     );
 }

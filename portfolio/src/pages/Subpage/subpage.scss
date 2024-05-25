@@ -1,0 +1,34 @@
+@import "../../styles/colors.scss";
+.subpage-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+  gap: 80px;
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    .title-wrapper {
+      background-color: $subpageBackground;
+      border-radius: 30px;
+      height: 200px;
+      width: 200px;
+    }
+    .description-wrapper {
+      background-color: $subpageBackground;
+      border-radius: 30px;
+      height: 200px;
+      width: 200px;
+    }
+  }
+  .right-column {
+    background-color: $subpageBackground;
+    border-radius: 30px;
+    height: 200px;
+    width: 200px;
+      
+  }
+}

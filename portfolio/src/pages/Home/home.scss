@@ -1,0 +1,54 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fontWeights.scss";
+
+.title-screen-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  overflow-y: hidden;
+  cursor: none;
+
+  .name-title {
+    font-size: 196px;
+    margin: 0;
+    @media only screen and (max-width: 896px) {
+    }
+  }
+  .first-name {
+    font-weight: 900;
+  }
+  .last-name {
+    font-weight: 900;
+  }
+  .all-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    .subpage-link {
+      color: $text;
+      font-family: "Inter", sans-serif;
+      font-weight: $bold;
+      font-size: 64px;
+      letter-spacing: -2px;
+      text-decoration: none;
+      margin: 0;
+      background-color: transparent;
+      border: none;
+      width: min-content;
+      white-space: nowrap;
+      padding: 0px;
+      cursor: none;
+      text-align: center;
+      &:hover {
+        color: $hoverText;
+        cursor: none;
+        font-style: italic;
+      }
+    }
+  }
+}

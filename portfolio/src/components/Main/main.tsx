@@ -1,17 +1,27 @@
 import { useState } from 'react';
-import { Cursor } from '../Cursor';
-import { TitleScreen } from '../TitleScreen';
-import SiteContext from '../Context/Context';
+import { Home } from '../../pages/Home';
+import { Subpage } from '../../pages/Subpage';
 
 const Main = () => {
+  const [page, setPage] = useState("Home");
 
-  const [hovering, setHovering] = useState(false);
+  function renderSwitch() {
+    switch(page) {
+      case 'Home':
+        return <Home setPage={setPage}/>;
+      case 'Nike':
+        return <Subpage setPage={setPage}/>;
+      case 'Creative':
+        return <Subpage setPage={setPage}/>;
+      case 'Me':
+        return <Subpage setPage={setPage}/>;
+      default:
+        return <Home setPage={setPage}/>;
+    }
+  }
 
   return (
-    <SiteContext.Provider value={{ hovering, setHovering}}>
-      <Cursor/>
-      <TitleScreen/>
-    </SiteContext.Provider>
+    renderSwitch()
   );
 }
 

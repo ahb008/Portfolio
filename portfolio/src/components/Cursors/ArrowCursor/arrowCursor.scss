@@ -1,0 +1,17 @@
+@import "../../../styles/colors.scss";
+
+.cursor {
+    height: 24px;
+    width: 24px;
+    background-color: $defaultCursor;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.arrow {
+    width: 16px;
+    height: 16px;
+    transform: translate(4px, 4px);
+}
