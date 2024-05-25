@@ -4,12 +4,14 @@ import './home.scss';
 
 interface HomeProps {
   setPage: (page: string) => void;
+  x: number,
+  y: number,
 }
 
-export const Home: React.FC<HomeProps> = ({setPage}) => {
+export const Home: React.FC<HomeProps> = ({setPage, x, y}) => {
   return (
     <>
-      <ArrowCursor/>
+      <ArrowCursor x={x} y={y}/>
       <div className='title-screen-wrapper'>
         <h1 className='name-title first-name'>ANDREW</h1>
         <div className="all-links">

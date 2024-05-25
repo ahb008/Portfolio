@@ -4,11 +4,14 @@ import mousePos from '../../../utils/useMousePos';
 import {ReactComponent as Arrow} from '../../../svg/Arrow.svg';
 import './arrowCursor.scss';
 
+interface ArrowCursorProps {
+  x: number,
+  y: number
+}
 
-export const ArrowCursor: React.FC = () => {
+
+export const ArrowCursor: React.FC<ArrowCursorProps> = ({x, y}) => {
     const [whichVariant, setWhichVariant] = useState("notPressed");
-
-    const {x, y} = mousePos();
 
     const cursorVariants = {
         pressed: { scale: 5, x: x-12, y: y-12, backgroundColor: "#BABABA80" },

@@ -1,31 +1,23 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import mousePos from '../../../utils/useMousePos';
-import {ReactComponent as X} from '../../../svg/X.svg';
 import './loader.scss';
 
 interface LoaderProps {
-    show: boolean
+    show: boolean;
+    x: number;
+    y: number;
 }
 
-export const Loader: React.FC<LoaderProps> = ({show}) => {
-
-    const {x, y} = mousePos();
+export const Loader: React.FC<LoaderProps> = ({show, x, y}) => {
 
     const draw = {
-        hidden: { opacity: 0, x:x, y:y },
-        visible: (i: any) => {
-          const delay = 1 + i * 0.5;
-          return {
-            pathLength: 1,
+        hidden: { pathLength: 0, opacity: 0 }, 
+        visible: {
+            pathLength: 1.1,
             opacity: 1,
             transition: {
-              pathLength: { delay, type: "spring", duration: 4, bounce: 0 },
-              opacity: { delay, duration: 0.01 }
-            },
-            x: x,
-            y: y,
-          };
+              pathLength: { type: "spring", duration: 4, bounce: 0 },
+              opacity: { duration: 0.01 }
+            }
         }
       };
     
@@ -35,7 +27,7 @@ export const Loader: React.FC<LoaderProps> = ({show}) => {
         height="100%"
         viewBox="0 0 100% 100%"
         initial="hidden"
-        animate={show ? "visible" : "hidden"}
+        animate="visible"
         className="loader-motion-wrapper"
         >
             <motion.circle
@@ -45,6 +37,7 @@ export const Loader: React.FC<LoaderProps> = ({show}) => {
                 stroke="#6A4EEC"
                 variants={draw}
                 strokeWidth="5px"
+                custom={1}
             />
         </motion.svg>
     );

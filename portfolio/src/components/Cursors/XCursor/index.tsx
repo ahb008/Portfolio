@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import mousePos from '../../../utils/useMousePos';
 import {ReactComponent as X} from '../../../svg/X.svg';
 import './xCursor.scss';
 
 interface XCursorProps {
     setPage: (page: string) => void;
+    x: number;
+    y: number;
 }
 
-export const XCursor: React.FC<XCursorProps> = ({setPage}) => {
+export const XCursor: React.FC<XCursorProps> = ({setPage, x, y}) => {
     const [whichVariant, setWhichVariant] = useState("notPressed");
-
-    const {x, y} = mousePos();
 
     const cursorVariants = {
       pressed: { scale: 2, x: x-24, y: y-24, backgroundColor: "#BABABA80" },

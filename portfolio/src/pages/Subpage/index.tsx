@@ -5,9 +5,11 @@ import { Loader } from '../../components/Cursors/Loader';
 
 interface SubpageProps {
   setPage: (page: string) => void;
+  x: number;
+  y: number;
 }
 
-export const Subpage: React.FC<SubpageProps> = ({setPage}) => {
+export const Subpage: React.FC<SubpageProps> = ({setPage, x, y}) => {
   const [showLoader, setShowLoader] = useState(false);
 
   useEffect(() => {
@@ -32,8 +34,8 @@ export const Subpage: React.FC<SubpageProps> = ({setPage}) => {
 
   return (
     <>
-      <XCursor setPage={setPage}/>
-      {showLoader && <Loader show={showLoader}/>}
+      <XCursor setPage={setPage} x={x} y={y}/>
+      {showLoader && <Loader show={showLoader} x={x} y={y}/>}
       <div className="subpage-wrapper">
         <div className="left-column">
           <div className="title-wrapper">
