@@ -35,7 +35,6 @@ export const ArrowCursor: React.FC<ArrowCursorProps> = ({x, y}) => {
         };
 
         // Attaching the event listeners to the window object
-        window.addEventListener('mousedown', handleMouseDown);
         window.addEventListener('mouseup', handleMouseUp);
 
         const specialTextElements = document.querySelectorAll('.special-text');
@@ -43,11 +42,12 @@ export const ArrowCursor: React.FC<ArrowCursorProps> = ({x, y}) => {
         specialTextElements.forEach(element => {
           element.addEventListener('mouseenter', () => {
               setWhichVariant("specialText");
+              window.addEventListener('mousedown', handleMouseDown);
           });
       
           element.addEventListener('mouseleave', () => {
               setWhichVariant("notPressed");
-              element.classList.remove("hovering");
+              window.removeEventListener('mousedown', handleMouseDown);
           });
         });
 

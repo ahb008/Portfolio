@@ -27,8 +27,8 @@
   .all-links {
     display: flex;
     flex-direction: column;
-    gap: 8px;
     align-items: center;
+    gap: 16px;
     .subpage-link {
       color: $text;
       font-family: "Inter", sans-serif;
@@ -47,7 +47,6 @@
       &:hover {
         color: $hoverText;
         cursor: none;
-        font-style: italic;
       }
     }
   }

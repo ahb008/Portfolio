@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import {ReactComponent as X} from '../../../svg/X.svg';
 import './xCursor.scss';
@@ -11,6 +11,7 @@ interface XCursorProps {
 
 export const XCursor: React.FC<XCursorProps> = ({setPage, x, y}) => {
     const [whichVariant, setWhichVariant] = useState("notPressed");
+    const timerRef:any = useRef();
 
     const cursorVariants = {
       pressed: { scale: 2, x: x-24, y: y-24, backgroundColor: "#BABABA80" },
@@ -22,13 +23,22 @@ export const XCursor: React.FC<XCursorProps> = ({setPage, x, y}) => {
       notPressed: { scale: 2, x: 24, y: 10 },
     };
 
+    //Function to detect a long press
+    function startPressTimer(ms: number) {
+      timerRef.current = setTimeout(() => {
+        setPage("Home");
+      }, ms);
+    }
+
     useEffect(() => {
         const handleMouseDown = () => {
             setWhichVariant("pressed");
+            startPressTimer(100);
         };
 
         const handleMouseUp = () => {
             setWhichVariant("notPressed");
+            clearTimeout(timerRef.current);
         };
 
         // Attaching the event listeners to the window object
