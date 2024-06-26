@@ -15,7 +15,7 @@ export const Loader: React.FC<LoaderProps> = ({show, x, y}) => {
             pathLength: 1.1,
             opacity: 1,
             transition: {
-              pathLength: { type: "spring", duration: 4, bounce: 0 },
+              pathLength: { type: "spring", duration: 2.5, bounce: 0 },
               opacity: { duration: 0.01 }
             }
         }

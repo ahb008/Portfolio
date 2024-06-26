@@ -33,7 +33,7 @@ export const XCursor: React.FC<XCursorProps> = ({setPage, x, y}) => {
     useEffect(() => {
         const handleMouseDown = () => {
             setWhichVariant("pressed");
-            startPressTimer(100);
+            startPressTimer(1200);
         };
 
         const handleMouseUp = () => {

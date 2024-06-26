@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import mousePos from '../../../utils/useMousePos';
 import {ReactComponent as Arrow} from '../../../svg/Arrow.svg';
 import './arrowCursor.scss';
 
