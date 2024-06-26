@@ -43,7 +43,7 @@ export const Subpage: React.FC<SubpageProps> = ({setPage, x, y}) => {
             <h2 className="subtitle">that's me!</h2>
           </div>
           <div className="description-wrapper">
-            <p className="description">Bingo bango bongo</p>
+            <p className="description">Hi! I'm Andrew Bass, a creative software developer specializing in front-end development based in Portland, OR. In my free time, I enjoy rock climbing, film photography, and good eats (because who doesn't). Hope you enjoyed this website :)</p>
           </div>
         </div>
         <div className="right-column">
