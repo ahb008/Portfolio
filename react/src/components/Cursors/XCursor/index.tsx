@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import {ReactComponent as X} from '../../../svg/X.svg';
+import {ReactComponent as X} from '../../../assets/svg/X.svg';
 import './xCursor.scss';
 
 interface XCursorProps {

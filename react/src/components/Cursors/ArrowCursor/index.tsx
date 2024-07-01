@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import {ReactComponent as Arrow} from '../../../svg/Arrow.svg';
+import {ReactComponent as Arrow} from '../../../assets/svg/Arrow.svg';
 import './arrowCursor.scss';
 
 interface ArrowCursorProps {
