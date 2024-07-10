@@ -11,18 +11,19 @@
   overflow: hidden;
   overflow-y: hidden;
   cursor: none;
+  @media screen and (max-width: 800px) {
+    overflow-y: scroll;
+    justify-content: center;
+    align-items: center;
+  }
 
   .name-title {
     font-size: 196px;
     margin: 0;
+    font-weight: 1000;
+    letter-spacing: -10px;
     @media only screen and (max-width: 896px) {
     }
-  }
-  .first-name {
-    font-weight: 900;
-  }
-  .last-name {
-    font-weight: 900;
   }
   .all-links {
     display: flex;

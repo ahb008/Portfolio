@@ -2,12 +2,11 @@ import { motion } from 'framer-motion';
 import './loader.scss';
 
 interface LoaderProps {
-    show: boolean;
     x: number;
     y: number;
 }
 
-export const Loader: React.FC<LoaderProps> = ({show, x, y}) => {
+export const Loader: React.FC<LoaderProps> = ({x, y}) => {
 
     const draw = {
         hidden: { pathLength: 0, opacity: 0 }, 
