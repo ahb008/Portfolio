@@ -16,7 +16,6 @@ export const Subpage: React.FC<SubpageProps> = ({setPage, x, y}) => {
 
   return (
     <>
-    {/* TODO: Fix xcursor when the screen gets small enough to scroll */}
       <XCursor setPage={setPage} x={x} y={y}/>
       <div className="subpage-wrapper">
         <div className="left-column">

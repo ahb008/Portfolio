@@ -13,21 +13,21 @@ export const ArrowCursor: React.FC<ArrowCursorProps> = ({x, y}) => {
     const [whichVariant, setWhichVariant] = useState("notPressed");
 
     const cursorVariants = {
-        pressed: { scale: 5, x: x-12, y: y-12, backgroundColor: "#BABABA80" },
-        notPressed: { scale: 1, x: x-12, y: y-12 },
-        specialText: { scale: 5, x: x-12, y: y-12, backgroundColor: "#BABABA80" }
+      // pressed: { scale: 5, x: x-12, y: y-12, backgroundColor: "#BABABA80" },
+      notPressed: { scale: 1, x: x-12, y: y-12 },
+      specialText: { scale: 5, x: x-12, y: y-12, backgroundColor: "#BABABA80" }
     };
 
     const arrowVariants = {
-      pressed: { scale: 1, x: -5, y: 5},
+      // pressed: { scale: 1, x: -5, y: 5},
       notPressed: { scale: 0 },
       specialText: { scale: 1, zIndex: 1 }
   };
 
     useEffect(() => {
-        const handleMouseDown = () => {
-            setWhichVariant("pressed");
-        };
+        // const handleMouseDown = () => {
+        //     setWhichVariant("pressed");
+        // };
 
         const handleMouseUp = () => {
             setWhichVariant("notPressed");
@@ -41,18 +41,18 @@ export const ArrowCursor: React.FC<ArrowCursorProps> = ({x, y}) => {
         specialTextElements.forEach(element => {
           element.addEventListener('mouseenter', () => {
               setWhichVariant("specialText");
-              window.addEventListener('mousedown', handleMouseDown);
+              // window.addEventListener('mousedown', handleMouseDown);
           });
       
           element.addEventListener('mouseleave', () => {
               setWhichVariant("notPressed");
-              window.removeEventListener('mousedown', handleMouseDown);
+              // window.removeEventListener('mousedown', handleMouseDown);
           });
         });
 
         // Cleanup function to remove the event listeners
         return () => {
-            window.removeEventListener('mousedown', handleMouseDown);
+            // window.removeEventListener('mousedown', handleMouseDown);
             window.removeEventListener('mouseup', handleMouseUp);
         };
     }, []);

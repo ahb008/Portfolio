@@ -6,12 +6,13 @@ interface HomeProps {
   setPage: (page: string) => void;
   x: number,
   y: number,
+  isMobile: boolean,
 }
 
-export const Home: React.FC<HomeProps> = ({setPage, x, y}) => {
+export const Home: React.FC<HomeProps> = ({setPage, x, y, isMobile}) => {
   return (
     <>
-      <ArrowCursor x={x} y={y}/>
+      {!isMobile && <ArrowCursor x={x} y={y}/>}
       <div className='title-screen-wrapper'>
         <h1 className='name-title'>Andrew</h1>
         <div className="all-links">

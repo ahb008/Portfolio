@@ -37,9 +37,12 @@ export const XCursor: React.FC<XCursorProps> = ({setPage, x, y}) => {
 
   useEffect(() => {
       const handleMouseDown = () => {
-        setWhichVariant("pressed");
-        setShowLoader(true);
-        startPressTimer(1200);
+        console.log(showArrow);
+        if (!showArrow) {
+          setWhichVariant("pressed");
+          setShowLoader(true);
+          startPressTimer(1200);  
+        }
       };
 
       const handleMouseUp = () => {
@@ -54,7 +57,6 @@ export const XCursor: React.FC<XCursorProps> = ({setPage, x, y}) => {
 
       const iconElements = document.querySelectorAll('.click-icon');
 
-      // TODO: figure out why I cant get this click function to work
       iconElements.forEach(element => {
         element.addEventListener('mouseenter', () => {
           setWhichVariant("icon");
@@ -72,7 +74,7 @@ export const XCursor: React.FC<XCursorProps> = ({setPage, x, y}) => {
         window.removeEventListener('mousedown', handleMouseDown);
         window.removeEventListener('mouseup', handleMouseUp);
       };
-  }, []);
+  }, [showArrow]);
 
   return (
     <>
