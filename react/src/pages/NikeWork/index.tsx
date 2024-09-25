@@ -10,7 +10,7 @@ interface SubpageProps {
   y: number;
 }
 
-export const Subpage: React.FC<SubpageProps> = ({ x, y}) => {
+export const NikeWork: React.FC<SubpageProps> = ({ x, y}) => {
 
   return (
     <>

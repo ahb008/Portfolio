@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {ReactComponent as X} from '../../../assets/svg/X.svg';
 import {ReactComponent as Arrow} from '../../../assets/svg/Arrow.svg';
@@ -6,16 +7,16 @@ import { Loader } from '../Loader';
 import './xCursor.scss';
 
 interface XCursorProps {
-    setPage: (page: string) => void;
     x: number;
     y: number;
 }
 
-export const XCursor: React.FC<XCursorProps> = ({setPage, x, y}) => {
+export const XCursor: React.FC<XCursorProps> = ({ x, y}) => {
   const [whichVariant, setWhichVariant] = useState("notPressed");
   const [showLoader, setShowLoader] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
   const timerRef:any = useRef();
+  const navigate = useNavigate();
 
   const cursorVariants = {
     pressed: { scale: 2, x: x-24, y: y-24 },
@@ -31,7 +32,7 @@ export const XCursor: React.FC<XCursorProps> = ({setPage, x, y}) => {
   //Function to detect a long press
   function startPressTimer(ms: number) {
     timerRef.current = setTimeout(() => {
-      setPage("Home");
+      navigate("/");
     }, ms);
   }
 
