@@ -17,9 +17,9 @@ export const Home: React.FC<HomeProps> = ({ x, y }) => {
       <div className='title-screen-wrapper'>
         <h1 className='name-title'>Andrew</h1>
         <div className="all-links">
-          <button className='subpage-link special-text' onClick={()=>navigate("/nike-work")}>NIKE WORK.</button>
-          <button className='subpage-link special-text' onClick={()=>navigate("/creative-projects")}>CREATIVE PROJECTS.</button>
-          <button className='subpage-link special-text' onClick={()=>navigate("/about")}>ABOUT ME.</button>
+          <button className='subpage-link special-text' onClick={()=>navigate("/portfolio/nike-work")}>NIKE WORK.</button>
+          <button className='subpage-link special-text' onClick={()=>navigate("/portfolio/creative-projects")}>CREATIVE PROJECTS.</button>
+          <button className='subpage-link special-text' onClick={()=>navigate("/portfolio/about")}>ABOUT ME.</button>
         </div>
         <h1 className='name-title'>Bass</h1>
       </div>

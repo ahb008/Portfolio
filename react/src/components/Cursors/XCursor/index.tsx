@@ -32,7 +32,7 @@ export const XCursor: React.FC<XCursorProps> = ({ x, y}) => {
   //Function to detect a long press
   function startPressTimer(ms: number) {
     timerRef.current = setTimeout(() => {
-      navigate("/");
+      navigate("/portfolio");
     }, ms);
   }
 
