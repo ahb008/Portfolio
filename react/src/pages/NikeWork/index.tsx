@@ -1,9 +1,11 @@
 import { XCursor } from '../../components/Cursors/XCursor';
+import {isMobile} from 'react-device-detect';
 import emailIcon from "../../assets/svg/Email.svg";
 import LinkedInIcon from "../../assets/svg/linkedIn.svg";
 import cicularDesign from "./circularDesign.png";
 import cardImage from "./cardImage.png";
 import '../Subpage/subpage.scss';
+import { useNavigate } from 'react-router-dom';
 
 interface SubpageProps {
   x: number;
@@ -11,11 +13,12 @@ interface SubpageProps {
 }
 
 export const NikeWork: React.FC<SubpageProps> = ({ x, y}) => {
-
+  const navigate = useNavigate();
   return (
     <>
-      <XCursor x={x} y={y}/>
+      {!isMobile && <XCursor x={x} y={y}/>}
       <div className="subpage-wrapper">
+        {isMobile && <a className="home-navigation" onTouchStart={()=>navigate("/")}>{`<- Home`}</a>}
         <div className="left-column">
           <div className="title-wrapper">
             <h1 className="title">Nike Work</h1>

@@ -10,10 +10,10 @@ const Main = () => {
 
   return (
     <Routes>
-      <Route path="/portfolio/*" element={<Home x={x} y={y} />} />
-      <Route path="/portfolio/nike-work" element={<NikeWork x={x} y={y}/>} />
-      <Route path="/portfolio/creative-projects" element={<CreativeProjects x={x} y={y}/>} />
-      <Route path="/portfolio/about" element={<Subpage x={x} y={y}/>} />
+      <Route path="/*" element={<Home x={x} y={y} />} />
+      <Route path="/nike-work" element={<NikeWork x={x} y={y}/>} />
+      <Route path="/creative-projects" element={<CreativeProjects x={x} y={y}/>} />
+      <Route path="/about" element={<Subpage x={x} y={y}/>} />
     </Routes>
   );
 }

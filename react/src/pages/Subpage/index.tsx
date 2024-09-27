@@ -3,6 +3,8 @@ import beanieImage from "./beanie.jpeg"
 import climbImage from "./climb.jpeg"
 import emailIcon from "../../assets/svg/Email.svg";
 import LinkedInIcon from "../../assets/svg/linkedIn.svg";
+import { isMobile } from 'react-device-detect';
+import { useNavigate } from 'react-router-dom';
 import './subpage.scss';
 
 interface SubpageProps {
@@ -11,11 +13,12 @@ interface SubpageProps {
 }
 
 export const Subpage: React.FC<SubpageProps> = ({ x, y}) => {
-
+  const navigate = useNavigate();
   return (
     <>
-      <XCursor x={x} y={y}/>
+      {!isMobile && <XCursor x={x} y={y}/>}
       <div className="subpage-wrapper">
+        {isMobile && <a className="home-navigation" onTouchStart={()=>navigate("/")}>{`<- Home`}</a>}
         <div className="left-column">
           <div className="title-wrapper">
             <h1 className="title">Hello!</h1>

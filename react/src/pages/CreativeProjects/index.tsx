@@ -2,7 +2,10 @@ import { XCursor } from '../../components/Cursors/XCursor';
 import emailIcon from "../../assets/svg/Email.svg";
 import LinkedInIcon from "../../assets/svg/linkedIn.svg";
 import '../Subpage/subpage.scss';
-import print from "./print.jpg";
+import print from "./pring.jpg";
+import clouds from "./clouds.jpg";
+import {isMobile} from 'react-device-detect';
+import { useNavigate } from 'react-router-dom';
 
 interface SubpageProps {
   x: number;
@@ -10,11 +13,12 @@ interface SubpageProps {
 }
 
 export const CreativeProjects: React.FC<SubpageProps> = ({ x, y}) => {
-
+  const navigate = useNavigate();
   return (
     <>
-      <XCursor x={x} y={y}/>
+      {!isMobile && <XCursor x={x} y={y}/>}
       <div className="subpage-wrapper">
+      {isMobile && <a className="home-navigation" onTouchStart={()=>navigate("/")}>{`<- Home`}</a>}
         <div className="left-column">
           <div className="title-wrapper">
             <h1 className="title">Creative Projects</h1>
@@ -34,7 +38,7 @@ export const CreativeProjects: React.FC<SubpageProps> = ({ x, y}) => {
             <img className="image" src={print} alt='Scan of a black lino cut print of two hands fused at the wrist'/>
           </div>
           <div className="image-wrapper">
-            <img className="image" src={print} alt='Scan of a black lino cut print of two hands fused at the wrist'/>
+            <img className="image" src={clouds} alt='Scan of a black lino cut print of two hands fused at the wrist'/>
           </div>
         </div>
       </div>
