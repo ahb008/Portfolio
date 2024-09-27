@@ -111,6 +111,9 @@
       .a-tag {
         color: black;
         cursor: none !important;
+        :visited {
+          color: black;
+        }
       }
       @media screen and (max-width: 800px) {
         width: 100%;
