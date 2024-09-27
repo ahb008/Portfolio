@@ -8,6 +8,7 @@ interface HomeProps {
   y: number,
 }
 
+
 export const Home: React.FC<HomeProps> = ({ x, y }) => {
   const navigate = useNavigate();
   return (
