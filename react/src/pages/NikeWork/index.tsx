@@ -1,9 +1,9 @@
 import { XCursor } from '../../components/Cursors/XCursor';
-import beanieImage from "./beanie.jpeg"
-import climbImage from "./climb.jpeg"
 import emailIcon from "../../assets/svg/Email.svg";
 import LinkedInIcon from "../../assets/svg/linkedIn.svg";
-import './subpage.scss';
+import cicularDesign from "./circularDesign.png";
+import cardImage from "./cardImage.png";
+import '../Subpage/subpage.scss';
 
 interface SubpageProps {
   x: number;
@@ -18,13 +18,13 @@ export const NikeWork: React.FC<SubpageProps> = ({ x, y}) => {
       <div className="subpage-wrapper">
         <div className="left-column">
           <div className="title-wrapper">
-            <h1 className="title">Hello!</h1>
-            <h2 className="subtitle">I'm andrew bass.</h2>
+            <h1 className="title">Nike Work</h1>
+            <h2 className="subtitle">Sep. 2022 - Present</h2>
           </div>
           <div className="description-wrapper">
-            <p className="description">Currently, I work as a creative software developer at Nike specializing in front-end development based out of Portland, OR.</p>
-            <p className="description">Besides tippy tapping keys, I enjoy rock climbing, film photography, and a really great park (because who doesn't).</p>
-            <p className="description">Hope you enjoyed this website and feel free to reach out :)</p>
+            <p className="description">Developer on Nike's intranet featuring a customizable dashboard with drag/drop widgets. This is a React app written with typescript and integrates multiple APIs using GraphQL. Deployed to all corporate employees.</p>
+            <p className="description">Independtly built 10+ React app websites, each tailored to specific departmental needs. These included sites for all employee affinitiy groups, the sustainability team, and the accessibility team.</p>
+            <p className="description">Most of my Nike work is internal, but an example can be viewed <a className="a-tag click-icon" href="https://staging.circulardesign.nike.com/" target="_target">here</a>.</p>
             <div className="icons">
               <img className="click-icon" src={emailIcon} alt='Black email icon' onClick={() => window.open('mailto:ahb008@gmail.com')}/>
               <img className="click-icon" src={LinkedInIcon} alt='Black LinkedIn icon' onClick={() => window.open('https://www.linkedin.com/in/andrewbass-engineer/')}/>
@@ -33,10 +33,14 @@ export const NikeWork: React.FC<SubpageProps> = ({ x, y}) => {
         </div>
         <div className="right-column">
           <div className="image-wrapper">
-            <img className="image" src={beanieImage} alt='Me wearing a yellow beanie smiling in a car'/>
+            <a className="a-tag click-icon" href="https://staging.circulardesign.nike.com/" target="_target">
+              <img className="image" src={cicularDesign} alt='Photo of the Nike Circular Design website that I build'/>
+            </a>
           </div>
           <div className="image-wrapper">
-            <img className="image" src={climbImage} alt='Me climbing two large boulders stacked on top of each other'/>
+            <a className="a-tag click-icon" href="https://staging.circulardesign.nike.com/" target="_target">
+              <img className="image" src={cardImage} alt='Photo of case study cards from the Nike Circular Design website that I build'/>
+            </a>
           </div>
         </div>
       </div>

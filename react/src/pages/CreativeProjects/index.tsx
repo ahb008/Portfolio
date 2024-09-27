@@ -1,9 +1,8 @@
 import { XCursor } from '../../components/Cursors/XCursor';
-import beanieImage from "./beanie.jpeg"
-import climbImage from "./climb.jpeg"
 import emailIcon from "../../assets/svg/Email.svg";
 import LinkedInIcon from "../../assets/svg/linkedIn.svg";
-import './subpage.scss';
+import '../Subpage/subpage.scss';
+import print from "./print.jpg";
 
 interface SubpageProps {
   x: number;
@@ -18,13 +17,12 @@ export const CreativeProjects: React.FC<SubpageProps> = ({ x, y}) => {
       <div className="subpage-wrapper">
         <div className="left-column">
           <div className="title-wrapper">
-            <h1 className="title">Hello!</h1>
-            <h2 className="subtitle">I'm andrew bass.</h2>
+            <h1 className="title">Creative Projects</h1>
+            <h2 className="subtitle">More projects coming soon!</h2>
           </div>
           <div className="description-wrapper">
-            <p className="description">Currently, I work as a creative software developer at Nike specializing in front-end development based out of Portland, OR.</p>
-            <p className="description">Besides tippy tapping keys, I enjoy rock climbing, film photography, and a really great park (because who doesn't).</p>
-            <p className="description">Hope you enjoyed this website and feel free to reach out :)</p>
+            <p className="description">I enjoy exploring different mediums, including printmaking, furniture design, and, most recently, film photography. My time studying design in college has shaped how I approach projects, and I’m always experimenting with new ideas and techniques.</p>
+            <p className="description">Currently, I am working towards self-publishing a photography zine.</p>
             <div className="icons">
               <img className="click-icon" src={emailIcon} alt='Black email icon' onClick={() => window.open('mailto:ahb008@gmail.com')}/>
               <img className="click-icon" src={LinkedInIcon} alt='Black LinkedIn icon' onClick={() => window.open('https://www.linkedin.com/in/andrewbass-engineer/')}/>
@@ -33,10 +31,10 @@ export const CreativeProjects: React.FC<SubpageProps> = ({ x, y}) => {
         </div>
         <div className="right-column">
           <div className="image-wrapper">
-            <img className="image" src={beanieImage} alt='Me wearing a yellow beanie smiling in a car'/>
+            <img className="image" src={print} alt='Scan of a black lino cut print of two hands fused at the wrist'/>
           </div>
           <div className="image-wrapper">
-            <img className="image" src={climbImage} alt='Me climbing two large boulders stacked on top of each other'/>
+            <img className="image" src={print} alt='Scan of a black lino cut print of two hands fused at the wrist'/>
           </div>
         </div>
       </div>

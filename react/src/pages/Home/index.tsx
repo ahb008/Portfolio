@@ -6,14 +6,13 @@ import './home.scss';
 interface HomeProps {
   x: number,
   y: number,
-  isMobile: boolean,
 }
 
-export const Home: React.FC<HomeProps> = ({ x, y, isMobile }) => {
+export const Home: React.FC<HomeProps> = ({ x, y }) => {
   const navigate = useNavigate();
   return (
     <>
-      {!isMobile && <ArrowCursor x={x} y={y}/>}
+      <ArrowCursor x={x} y={y}/>
       <div className='title-screen-wrapper'>
         <h1 className='name-title'>Andrew</h1>
         <div className="all-links">

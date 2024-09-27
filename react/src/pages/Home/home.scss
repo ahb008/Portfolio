@@ -15,6 +15,7 @@
     overflow-y: scroll;
     justify-content: center;
     align-items: center;
+    gap: 10vh;
   }
 
   .name-title {
@@ -22,7 +23,10 @@
     margin: 0;
     font-weight: 1000;
     letter-spacing: -10px;
-    @media only screen and (max-width: 896px) {
+    @media only screen and (max-width: 800px) {
+      font-size: 80px;
+      font-weight: 800;
+      letter-spacing: -2px;
     }
   }
   .all-links {
@@ -48,6 +52,9 @@
       &:hover {
         color: $hoverText;
         cursor: none;
+      }
+      @media only screen and (max-width: 800px) {
+        font-size: 32px;
       }
     }
   }
